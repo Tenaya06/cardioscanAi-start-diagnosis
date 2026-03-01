@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardioScanAI | AI-Powered Cardiac Diagnosis</title>
+    <meta name="description"
+        content="Next-generation AI diagnostic system for coronary artery disease using CT, MRI, and ECG.">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="bg-gradient-mesh"></div>
+
+    <nav>
+        <a href="/" class="logo">CardioScanAI</a>
+        <ul class="nav-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+            <a href="/login.html" class="btn btn-primary">Start Diagnosis <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content fade-in">
+                <h1>The Future of <span style="color: var(--primary)">Cardiac</span> Diagnosis</h1>
+                <p>Non-invasive, AI-powered system designed to diagnose coronary artery disease with precision.
+                    Analyzing CT scans, MRI, and ECG signals with deep learning.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="/login.html" class="btn btn-primary">Get Started</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image fade-in" style="animation-delay: 0.2s;">
+                <img src="/hero.png" alt="Futuristic Cardiac AI Interface">
+            </div>
+        </section>
+
+        <section id="about" class="diagnosis-container fade-in">
+            <h2 style="font-size: 3rem; margin-bottom: 2rem; text-align: center;">What is <span class="logo"
+                    style="font-size: 3rem;">CardioScanAI</span>?</h2>
+            <div
+                style="background: var(--bg-card); padding: 3rem; border-radius: 24px; border: 1px solid var(--glass-border);">
+                <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    CardioScanAI is a revolutionary multi-modal diagnostic platform. Unlike traditional invasive
+                    coronary angiography, our system leverages the power of advanced deep learning to provide a safer,
+                    faster, and more accessible alternative.
+                </p>
+                <div class="upload-grid">
+                    <div class="upload-card">
+                        <i class="fas fa-microscope"></i>
+                        <h3>CT Analysis</h3>
+                        <p>Detailed extraction of structural narrowing and plaque composition from CT angiography
+                            slices.</p>
+                    </div>
+                    <div class="upload-card">
+                        <i class="fas fa-wave-square"></i>
+                        <h3>ECG Signals</h3>
+                        <p>Real-time processing of electrical anomalies and rhythm patterns to detect ischemia.</p>
+                    </div>
+                    <div class="upload-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>MRI Fusion</h3>
+                        <p>Functional abnormality mapping using specialized neural networks for complete cardiac
+                            assessment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

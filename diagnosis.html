@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Diagnosis | CardioScanAI</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="bg-gradient-mesh"></div>
+
+    <nav>
+        <a href="/" class="logo">CardioScanAI</a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+            <div style="text-align: right;">
+                <p style="font-size: 0.9rem; font-weight: 600;">Dr. Smith</p>
+                <p style="font-size: 0.7rem; color: var(--text-secondary);">Clinic Admin</p>
+            </div>
+            <img src="https://ui-avatars.com/api/?name=Dr+Smith&background=00f2ff&color=fff" alt="Avatar"
+                style="width: 40px; border-radius: 50%;">
+        </div>
+    </nav>
+
+    <main class="diagnosis-container">
+        <header style="margin-bottom: 4rem;" class="fade-in">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Let's start <span
+                    style="color: var(--primary)">diagnosis</span></h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">Upload patient multi-modal reports to generate
+                an AI-powered diagnostic summary.</p>
+        </header>
+
+        <div class="upload-grid">
+            <div class="upload-card fade-in" style="animation-delay: 0.1s;">
+                <i class="fas fa-file-medical"></i>
+                <h3>CT Scan Report</h3>
+                <p>Upload DICOM or PDF structural files</p>
+                <div class="file-input-wrapper">
+                    <button class="btn btn-outline" style="width: 100%; justify-content: center;">Choose File</button>
+                    <input type="file" accept=".pdf,.dcm,.jpg,.png">
+                </div>
+            </div>
+
+            <div class="upload-card fade-in" style="animation-delay: 0.2s;">
+                <i class="fas fa-heartbeat"></i>
+                <h3>ECG Signal Data</h3>
+                <p>Upload CSV or XML waveform data</p>
+                <div class="file-input-wrapper">
+                    <button class="btn btn-outline" style="width: 100%; justify-content: center;">Choose File</button>
+                    <input type="file" accept=".csv,.xml,.edf">
+                </div>
+            </div>
+
+            <div class="upload-card fade-in" style="animation-delay: 0.3s;">
+                <i class="fas fa-dna"></i>
+                <h3>MRI Analysis</h3>
+                <p>Upload functional metabolic reports</p>
+                <div class="file-input-wrapper">
+                    <button class="btn btn-outline" style="width: 100%; justify-content: center;">Choose File</button>
+                    <input type="file" accept=".pdf,.nii,.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; text-align: center;" class="fade-in" style="animation-delay: 0.4s;">
+            <button class="btn btn-primary" style="padding: 1.2rem 3rem; font-size: 1.2rem;" id="run-btn">
+                Run AI Diagnosis <i class="fas fa-bolt"></i>
+            </button>
+        </div>
+
+        <div id="results-loader" style="display: none; margin-top: 4rem; text-align: center;">
+            <div class="loader-ripple" style="margin: 0 auto 1.5rem;"></div>
+            <p style="color: var(--primary); font-weight: 600;">Analyzing Multi-Modal Features...</p>
+        </div>
+    </main>
+
+    <style>
+        .loader-ripple {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .loader-ripple:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            border: 4px solid var(--primary);
+            opacity: 1;
+            border-radius: 50%;
+            animation: loader-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        }
+
+        @keyframes loader-ripple {
+            0% {
+                top: 36px;
+                left: 36px;
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+
+            100% {
+                top: 0px;
+                left: 0px;
+                width: 72px;
+                height: 72px;
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <script>
+        document.getElementById('run-btn').addEventListener('click', function () {
+            this.style.display = 'none';
+            document.getElementById('results-loader').style.display = 'block';
+            setTimeout(() => {
+                alert('AI Diagnosis Complete! Blockage Probability: 12% (Low Severity). Full report generated.');
+                window.location.reload();
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>
